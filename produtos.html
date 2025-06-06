@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - ArtePapel</title>
+    <meta name="description" content="Conheça nossa linha completa de produtos personalizados em papelaria e design.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo.png" type="image/png">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Estilos específicos para página de produtos */
+        .product-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/produtos/incone_papelaria_personalizada.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .product-categories {
+            padding: 80px 0;
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .category-tab {
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-weight: 500;
+        }
+        
+        .category-tab.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background-color: white;
+        }
+        
+        .product-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-item:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-details {
+            padding: 20px;
+        }
+        
+        .product-details h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .product-details p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .product-price {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .product-rating {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="ArtePapel Logo">
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="index.html#about" class="nav-link">Quem Somos</a></li>
+                    <li><a href="produtos.html" class="nav-link">Produtos</a></li>
+                    <li><a href="index.html#gallery" class="nav-link">Inspirações</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+                
+                <button class="mobile-toggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="product-hero">
+        <div class="container">
+            <h1>Nossos Produtos</h1>
+            <p>Soluções criativas e personalizadas para todas as necessidades</p>
+        </div>
+    </section>
+
+    <!-- Categorias de Produtos -->
+    <section class="product-categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Catálogo Completo</h2>
+                <p>Explore nossa linha de produtos exclusivos</p>
+            </div>
+            
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">Todos</button>
+                <button class="category-tab" data-category="papelaria">Papelaria</button>
+                <button class="category-tab" data-category="impressos">Impressos</button>
+                <button class="category-tab" data-category="embalagens">Embalagens</button>
+                <button class="category-tab" data-category="convites">Convites</button>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Papelaria -->
+                <div class="product-item" data-category="papelaria">
+                    <div class="product-image">
+                        <img src="img/produtos/incone_papelaria_personalizada.jpg" alt="Cadernos Personalizados">
+                    </div>
+                    <div class="product-details">
+                        <h3>Cadernos Personalizados</h3>
+                        <p>Cadernos com capa dura e personalização exclusiva para sua marca ou evento.</p>
+                        <div class="product-meta">
+                            <span class="product-price">A partir de R$ 35,00</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <a href="contato.html" class="btn btn-outline">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <div class="product-item" data-category="papelaria">
+                    <div class="product-image">
+                        <img src="img/imagem2_caderno_artesanal.jpg" alt="Cadernos Artesanais">
+                    </div>
+                    <div class="product-details">
+                        <h3>Cadernos Artesanais</h3>
+                        <p>Cadernos artesanais com acabamento premium e personalização completa.</p>
+                        <div class="product-meta">
+                            <span class="product-price">A partir de R$ 45,00</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <a href="contato.html" class="btn btn-outline">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Impressos -->
+                <div class="product-item" data-category="impressos">
+                    <div class="product-image">
+                        <img src="img/produtos/icone_impressos_graficos.jpeg" alt="Impressão Gráfica">
+                    </div>
+                    <div class="product-details">
+                        <h3>Impressão Gráfica de Alta Qualidade</h3>
+                        <p>Serviços de impressão em diversos formatos, papéis e acabamentos especiais.</p>
+                        <div class="product-meta">
+                            <span class="product-price">A partir de R$ 80,00/100un</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <a href="contato.html" class="btn btn-outline">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <div class="product-item" data-category="impressos">
+                    <div class="product-image">
+                        <img src="img/imagem5_tecnologia_qualidade.jpg" alt="Tecnologia e Qualidade">
+                    </div>
+                    <div class="product-details">
+                        <h3>Folders e Flyers</h3>
+                        <p>Material promocional impresso em alta qualidade para divulgação de sua marca.</p>
+                        <div class="product-meta">
+                            <span class="product-price">A partir de R$ 150,00/100un</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <a href="contato.html" class="btn btn-outline">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Embalagens -->
+                <div class="product-item" data-category="embalagens">
+                    <div class="product-image">
+                        <img src="img/produtos/incone_embalagens_criativas.jpg" alt="Embalagens Personalizadas">
+                    </div>
+                    <div class="product-details">
+                        <h3>Embalagens Criativas</h3>
+                        <p>Embalagens exclusivas que valorizam seu produto e fortalecem sua marca.</p>
+                        <div class="product-meta">
+                            <span class="product-price">A partir de R$ 200,00/50un</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <a href="contato.html" class="btn btn-outline">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <div class="product-item" data-category="embalagens">
+                    <div class="product-image">
+                        <img src="img/imagem3_embalagens_personalizadas.jpg" alt="Embalagens Personalizadas">
+                    </div>
+                    <div class="product-details">
+                        <h3>Embalagens Personalizadas</h3>
+                        <p>Embalagens de papel com impressão personalizada para sua loja ou evento.</p>
+                        <div class="product-meta">
+                            <span class="product-price">A partir de R$ 180,00/50un</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <a href="contato.html" class="btn btn-outline">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Convites -->
+                <div class="product-item" data-category="convites">
+                    <div class="product-image">
+                        <img src="img/imagem2_convite_casamento.jpg" alt="Convites de Casamento">
+                    </div>
+                    <div class="product-details">
+                        <h3>Convites de Casamento</h3>
+                        <p>Convites elegantes e personalizados para tornar seu casamento ainda mais especial.</p>
+                        <div class="product-meta">
+                            <span class="product-price">A partir de R$ 250,00/50un</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <a href="contato.html" class="btn btn-outline">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <div class="product-item" data-category="convites">
+                    <div class="product-image">
+                        <img src="img/imagem1_convite_infantil.png" alt="Convite Infantil">
+                    </div>
+                    <div class="product-details">
+                        <h3>Convites Infantis</h3>
+                        <p>Convites personalizados para aniversários infantis e eventos especiais.</p>
+                        <div class="product-meta">
+                            <span class="product-price">A partir de R$ 180,00/50un</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <a href="contato.html" class="btn btn-outline">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="background-color: var(--primary-color); color: white; padding: 80px 0; text-align: center;">
+        <div class="container">
+            <h2>Precisa de um orçamento personalizado?</h2>
+            <p>Entre em contato conosco e crie produtos exclusivos para sua marca ou evento</p>
+            <a href="contato.html" class="btn" style="margin-top: 20px;">Fale Conosco</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="img/logo.png" alt="ArtePapel Logo">
+                    </div>
+                    <p>Transformamos ideias em realidade através de soluções criativas em papelaria e design, com produtos personalizados que expressam identidade.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html#about">Quem Somos</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="index.html#gallery">Inspirações</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Produtos</h3>
+                    <ul>
+                        <li><a href="#" data-category="papelaria">Papelaria Personalizada</a></li>
+                        <li><a href="#" data-category="impressos">Impressos Gráficos</a></li>
+                        <li><a href="#" data-category="embalagens">Embalagens Criativas</a></li>
+                        <li><a href="#" data-category="convites">Convites Especiais</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p>Inscreva-se para receber novidades e promoções</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail" required class="form-control">
+                        <button type="submit" class="btn">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> ArtePapel. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script>
+        // Filtro de categorias
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const productItems = document.querySelectorAll('.product-item');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove classe ativa de todas as abas
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Adiciona classe ativa à aba clicada
+                    this.classList.add('active');
+                    
+                    // Filtra produtos
+                    const category = this.dataset.category;
+                    
+                    productItems.forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Links de categoria no footer
+            document.querySelectorAll('.footer-links a[data-category]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.dataset.category;
+                    
+                    // Ativa a aba correspondente
+                    categoryTabs.forEach(tab => {
+                        if (tab.dataset.category === category) {
+                            tab.click();
+                        }
+                    });
+                    
+                    // Rola para a seção de produtos
+                    document.querySelector('.product-categories').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
